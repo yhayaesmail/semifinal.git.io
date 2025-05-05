@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NVIDIA GeForce RTX 4090</title>
+  <link rel="stylesheet" href="tony.css">
+</head>
+<body>
+  <header>
+    <div class="navbar" id="nav1">
+      <div class="user">
+        <a href="../ahmed_yasser/indLOGIN.html" target="_blank">Sign in</a>
+        <a href="../mohamed_SAID/cart.html">My cart</a>
+      </div>
+      <div class="navitems">
+        <a href="../adham_samer/Mnjaro IT project/main page.html"
+          >accessories</a
+        >
+                  <a href="../ZAID_MOHAMMED/11test_project/index.html">Laptop</a>
+        <div class="down">
+          <a href="#" class="downmain">computer</a>
+          <div class="downmenu">
+            <ul>
+              <li><a href="#">INTEL</a></li>
+              <li><a href="#">AMD</a></li>
+              <li><a href="tony.html">GPUS</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <a href="../index.html" class="logo">Mnjaro</a>
+    </div>
+  </header>
+  <div class="product-wrapper">
+    <div class="image-and-title">
+      <div class="image-and-info">
+        <div class="thumbnails">
+          <img src="imgs/zt-d40900k-10p-image-01.jpg" onclick="changeImage(0)">
+          <img src="imgs/zt-d40900k-10p-image-06.jpg" onclick="changeImage(1)">
+          
+        </div>
+        <img id="product-image" class="main-image" src="imgs/zt-d40900k-10p-image-01.jpg">
+
+        <div class="product-info">
+          <h1 class="title">NVIDIA GeForce RTX 4090</h1>
+          <h3 class="small-desc">Unmatched performance for gamers, creators, and AI</h3>
+          <div class="price-tag">Price: <span>$1,599</span></div>
+          <div class="action-buttons">
+            <button class="btn cart">Add to Cart</button>
+            <button class="btn buy">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="big-desc-box">
+        The RTX 4090 is the most powerful consumer GPU ever made. With 24GB of GDDR6X memory and 16,384 CUDA cores, it's ready for 4K and 8K gaming, video editing, 3D rendering, and more.
+
+        <ul>
+          <li>CUDA Cores: 16384</li>
+          <li>Boost Clock: 2.52 GHz</li>
+          <li>Memory: 24GB GDDR6X</li>
+          <li>Power: 450W</li>
+          <li>Recommended PSU: 850W</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<script>
+  var images = [
+    "imgs/zt-d40900k-10p-image-01.jpg",
+    "imgs/zt-d40900k-10p-image-06.jpg",
+   
+  ];
+  function changeImage(index) {
+    document.getElementById("product-image").src = images[index];
+  }
+</script>
+<footer>
+  <div class="foot">
+    <h1>MnJaro</h1>
+    <ul class="footer-links">
+      <li><a href="../cntcs.html" target="_blank">Contact Us</a></li>
+      <li><a href="../pri.html" target="_blank">Privacy Policy</a></li>
+      <li><a href="../copy.html" target="_blank">Copyright</a></li>
+      <li><a href="../ahmed_yasser/accountint.html" target="_blank">MyAccount</a></li>
+    </ul>
+    <div class="me">
+      <h3>Who made this website?</h3>
+      <p>Name: Antony mofeed </p>
+      <p>ID: 20240173</p>
+    </div>
+    <h2>
+      Mnjaro Store © 2019 All Rights Reserved. Designed by Mnjaro Store
+    </h2>
+  </div>
+</footer>
+</body>
+</html>

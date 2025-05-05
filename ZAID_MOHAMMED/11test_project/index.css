@@ -1,0 +1,264 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto',Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+ul {
+    list-style: none;
+}
+
+/* nav css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    padding: 12px 24px;
+    font-family: Arial, sans-serif;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.navitems {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.navitems a {
+    font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #cccccc09;
+    border-radius: 11px;
+    padding: 6px 8px;
+}
+
+.navitems a:hover {
+    background-color: #ccc;
+    color: #ff3333;
+}
+
+.down {
+    position: relative;
+}
+
+.downmenu {
+    position: absolute;
+    z-index: 999;
+    top: 100%;
+    left: 0;
+    background-color: #2a2a2a;
+    padding: 5px 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.down:hover .downmenu {
+    opacity: 1;
+    visibility: visible;
+    background-color: #ffffff;
+}
+
+.downmenu a {
+    display: block;
+    color: #000000;
+    padding: 6px 12px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.downmenu a:hover {
+    background-color: #444444;
+    color: #ff3333;
+}
+
+.user {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.user a {
+    background-color: #ccc;
+    font-size: 18px;
+    color: #000000;
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 12px;
+}
+
+.user a:hover {
+    background-color: #3d3d3d;
+    color: #ff3333;
+}
+/* search css */
+
+.search-bar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.search-bar input {
+    
+    width: 40%;
+    padding: 14px 20px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+}
+
+.search-bar button {
+    padding: 12px 50px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #8c8a8a;
+    border-radius: 20px;
+}
+
+/* laptops css */
+
+.laptops
+{
+    width: 95%;
+    margin: auto;
+    padding: 20px 0;
+}
+
+.title
+{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.laptop-container {
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.laptop-card {
+    max-width: 200px;
+    flex-grow: 1;
+    background: #eee;
+    transition: all 0.3s ease-in-out;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.laptop-card:hover
+{
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.laptop-card a {
+    font-size: large;
+    margin: 10px 0;
+    padding: 0 5px;
+}
+
+.laptop-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 10px 0; 
+    padding: 0 5px; 
+}
+
+.Buy-Now {
+    text-align: right;
+    margin-top: auto;
+}
+
+.Buy-Now a
+{
+    display: inline-block;
+    border: 1px solid black;
+    padding: 5px 20px;
+    font-size: 15px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.Buy-Now a:hover
+{
+    color: white;
+    background: black;
+    transition: 0.3s;
+}
+
+/* foot css */
+
+.foot {
+    padding: 40px 20px;
+    border-top: 2px solid #fff;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.foot h1 {
+    font-size: 50px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 40px;
+    padding: 0;
+}
+
+.footer-links li {
+    list-style: none;
+}
+
+.footer-links a {
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer-links a:hover {
+    color: #000000;
+    color: red;
+}
+
+.me p,.me h3 {
+    font-size: 18px;
+    color: #fff;
+}
+
+.foot h2 {
+    font-size: 20px;
+    color: #fff;
+}
+.phowtos img{
+    width: 300px;
+    height: auto;
+}
+
