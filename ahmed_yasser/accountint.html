@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            overflow: auto;
+        }
+
+        .profile-nav {
+            display: flex;
+            flex-direction: column;
+            margin-right: 20px;
+            border-right: 1px solid #ddd;
+            padding-right: 20px;
+            min-width: 150px;
+        }
+
+        .profile-nav button {
+            background-color: transparent;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            margin-bottom: 10px;
+            font-family: 'Source Sans Pro', sans-serif;
+            color: #555;
+            text-align: left;
+        }
+
+        .profile-nav button:hover {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .profile-nav button.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .profile-content {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .profile-content.active {
+            display: block;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h1 {
+            margin: 0;
+            font-size: 28px;
+            color: #333;
+        }
+
+        .profile-details {
+            margin-bottom: 20px;
+        }
+
+        .profile-details h2 {
+            font-size: 20px;
+            color: #444;
+            margin-bottom: 10px;
+        }
+
+        .profile-details p {
+            margin: 5px 0;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .profile-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .profile-form .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .profile-form .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .profile-form .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .profile-form .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+            resize: none;
+        }
+
+        .profile-form .form-group textarea:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .profile-form .save-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .profile-form .save-button:hover {
+            background-color: #0056b3;
+        }
+
+        .change-password-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .change-password-form h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .change-password-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .change-password-form .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .change-password-form .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .change-password-form .form-group input:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+        }
+
+        .change-password-form .change-password-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .change-password-form .change-password-button:hover {
+            background-color: #0056b3;
+        }
+
+        .notification-settings {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            max-width: 100%;
+            margin: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .notification-settings h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .notification-settings .form-group {
+            margin-bottom: 20px;
+        }
+
+        .notification-settings .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .notification-settings .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .notification-settings .save-notification-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .notification-settings .save-notification-button:hover {
+            background-color: #0056b3;
+        }
+
+        #profile-image-upload {
+            display: none;
+        }
+
+        .profile-image-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ddd;
+            cursor: pointer;
+        }
+
+        .profile-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            display: none;
+        }
+
+        .profile-image-container label {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image-container:hover {
+            background-color: #f8f8f8;
+        }
+
+        @media (max-width: 768px) {
+            .profile-container {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .profile-nav {
+                flex-direction: row;
+                overflow-x: auto;
+                margin-bottom: 20px;
+                border-bottom: 1px solid #ddd;
+                border-right: none;
+                padding-right: 0;
+                min-width: auto;
+            }
+
+            .profile-nav button {
+                margin-bottom: 0;
+                margin-right: 10px;
+                white-space: nowrap;
+            }
+
+            .profile-content {
+                height: auto;
+                overflow-y: auto;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-header img {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <div class="profile-nav">
+            <button data-target="profile" class="active">Profile</button>
+            <button data-target="change-password">Change Password</button>
+            <button data-target="notifications">Notifications</button>
+        </div>
+        <div id="profile" class="profile-content active">
+            <div class="profile-header">
+                <div class="profile-image-container">
+                    <label for="profile-image-upload">
+                        <img id="profile-image-preview" src="#" alt="Profile Picture">
+                        <span id="profile-image-text">Choose Photo</span>
+                    </label>
+                    <input type="file" id="profile-image-upload" accept="image/*">
+                </div>
+                <h1 id="profile-name">Amigo Frank</h1>
+            </div>
+            <div class="profile-details">
+                <h2>About Me</h2>
+                <p id="about-me-text">One Piece 3MK</p>
+            </div>
+            <form class="profile-form" id="profile-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" value="Amigo Frank">
+                </div>
+                <div class="form-group">
+                    <label for="bio">Your Bio</label>
+                    <textarea id="bio" rows="4">One Piece 3MK</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" value="https://example.com">
+                </div>
+                <div class="form-group">
+                    <label for="facebook">Facebook</label>
+                    <input type="text" id="facebook" value="https://www.facebook.com/johndoe">
+                </div>
+                <div class="form-group">
+                    <label for="twitter">Twitter</label>
+                    <input type="text" id="twitter" value="https://twitter.com/johndoe">
+                </div>
+                <button type="submit" class="save-button">Save Profile</button>
+            </form>
+        </div>
+        <div id="change-password" class="profile-content">
+            <div class="change-password-form">
+                <h2>Change Password</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" placeholder="Enter your current password">
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" placeholder="Enter your new password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-new-password">Confirm New Password</label>
+                        <input type="password" id="confirm-new-password" placeholder="Confirm your new password">
+                    </div>
+                    <button type="submit" class="change-password-button">Change Password</button>
+                </form>
+            </div>
+        </div>
+        <div id="notifications" class="profile-content">
+            <div class="notification-settings">
+                <h2>Notification Settings</h2>
+                <form>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="email-notifications" checked>
+                            Receive email notifications
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="push-notifications">
+                            Receive push notifications
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="sms-notifications">
+                            Receive SMS notifications
+                        </label>
+                    </div>
+                    <button type="submit" class="save-notification-button">Save Settings</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const navButtons = document.querySelectorAll('.profile-nav button');
+            const contentSections = document.querySelectorAll('.profile-content');
+            const profileForm = document.getElementById('profile-form');
+            const aboutMeText = document.getElementById('about-me-text');
+            const profileImageUpload = document.getElementById('profile-image-upload');
+            const profileImagePreview = document.getElementById('profile-image-preview');
+            const profileImageText = document.getElementById('profile-image-text');
+            const profileImageContainer = document.querySelector('.profile-image-container');
+            const profileName = document.getElementById('profile-name');
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    navButtons.forEach(b => b.classList.remove('active'));
+                    contentSections.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+
+            profileForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const bio = document.getElementById('bio').value;
+                const website = document.getElementById('website').value;
+                const facebook = document.getElementById('facebook').value;
+                const twitter = document.getElementById('twitter').value;
+
+                profileName.textContent = name;
+                aboutMeText.textContent = bio;
+
+                alert('Profile information updated successfully!');
+            });
+
+            profileImageUpload.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function() {
+                    profileImagePreview.src = reader.result;
+                    profileImagePreview.style.display = 'block';
+                    profileImageText.style.display = 'none';
+                }
+
+                if (file) {
+                    reader.readAsDataURL(file);
+                } else {
+                    profileImagePreview.src = '#';
+                    profileImagePreview.style.display = 'none';
+                    profileImageText.style.display = 'block';
+                }
+            });
+
+            profileImageContainer.addEventListener('click', () => {
+                profileImageUpload.click();
+            });
+        });
+    </script>
+</body>
+</html>

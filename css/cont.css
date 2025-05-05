@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  font-size: 16px;
+}
+
+.container {
+  width: 60%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+label {
+  font-size: 18px;
+  color: #333;
+}
+
+input,
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  font-size: 18px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3f3f3f;
+}
+.phone-numbers {
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-left: 4px solid #3e3e3e;
+  border-radius: 5px;
+}
+
+.phone-numbers h2 {
+  font-size: 22px;
+  color: #606060;
+  margin-bottom: 10px;
+}
+
+.phone-numbers ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.phone-numbers li {
+  padding: 5px 0;
+  font-size: 16px;
+  color: #333;
+}

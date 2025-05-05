@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+             background-image:
+                linear-gradient(135deg,
+                    #b9c1cd 0%, #829cb5 50%, #617ca1 100%);
+            background-size: cover;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body class="p-4 flex items-center justify-center">
+    <div class="w-full max-w-md bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl rounded-2xl transition-all duration-300 hover:shadow-purple-500/20 hover:scale-[1.01]">
+        <div class="text-center p-6">
+            <h2 id="card-title" class="text-3xl font-semibold text-white">Login</h2>
+            <p id="card-description" class="text-gray-300">Welcome back! Please enter your credentials to log in.</p>
+        </div>
+        <div class="p-6">
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label for="email" class="text-white block mb-2">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="email-error" class="text-red-400 text-sm"></p>
+                </div>
+                <div>
+                    <label for="password" class="text-white block mb-2">Password</label>
+                    <input type="password" id="password" placeholder="Enter your password" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="password-error" class="text-red-400 text-sm"></p>
+                </div>
+                <p id="login-error" class="text-red-500 text-sm text-center"></p>
+                <button type="submit" class="w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-full py-3 text-lg font-semibold hover:from-purple-600 hover:to-blue-600 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
+                    Login
+                </button>
+                <button type="button" id="register-button" class="w-full mt-2 text-white border border-white/20 rounded-md py-2 hover:bg-white/10 transition-colors duration-200">
+                    Register
+                </button>
+            </form>
+            <form id="register-form" class="space-y-6 hidden">
+                <div>
+                    <label for="full-name" class="text-white block mb-2">Full Name</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="full-name-error" class="text-red-400 text-sm"></p>
+                </div>
+                <div>
+                    <label for="username" class="text-white block mb-2">Username</label>
+                    <input type="text" id="username" placeholder="Enter your username" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="username-error" class="text-red-400 text-sm"></p>
+                </div>
+                <div>
+                    <label for="register-email" class="text-white block mb-2">Email</label>
+                    <input type="email" id="register-email" placeholder="Enter your email" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="register-email-error" class="text-red-400 text-sm"></p>
+                </div>
+                <div>
+                    <label for="register-password" class="text-white block mb-2">Password</label>
+                    <input type="password" id="register-password" placeholder="Enter your password" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="register-password-error" class="text-red-400 text-sm"></p>
+                </div>
+                <div>
+                    <label for="confirm-password" class="text-white block mb-2">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Re-enter your password" required
+                           class="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 transition-colors duration-200">
+                    <p id="confirm-password-error" class="text-red-400 text-sm"></p>
+                </div>
+                <button type="submit" class="w-full bg-red-500 text-white rounded-full py-3 text-lg font-semibold hover:bg-red-600 transition-all duration-300 shadow-lg hover:shadow-red-500/50">
+                    Register
+                </button>
+                <button type="button" id="back-to-login-button" class="w-full mt-2 text-white border border-white/20 rounded-md py-2 hover:bg-white/10 transition-colors duration-200">
+                    Back to Login
+                </button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const registerButton = document.getElementById('register-button');
+        const backToLoginButton = document.getElementById('back-to-login-button');
+        const cardTitle = document.getElementById('card-title');
+        const cardDescription = document.getElementById('card-description');
+        const loginError = document.getElementById('login-error');
+
+        registerButton.addEventListener('click', () => {
+            loginForm.classList.add('hidden');
+            registerForm.classList.remove('hidden');
+            cardTitle.textContent = 'Register';
+            cardDescription.textContent = 'Create an account';
+            loginError.textContent = '';
+            clearErrors();
+        });
+
+        backToLoginButton.addEventListener('click', () => {
+            registerForm.classList.add('hidden');
+            loginForm.classList.remove('hidden');
+            cardTitle.textContent = 'Login';
+            cardDescription.textContent = 'Welcome back! Please enter your credentials to log in.';
+            clearErrors();
+        });
+
+        loginForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            clearErrors();
+
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            let hasErrors = false;
+
+            if (!validateEmail(email)) {
+                formErrorResponse("email-error", "Please enter a valid email address.");
+                hasErrors = true;
+            }
+            if (!validatePassword(password)) {
+                formErrorResponse("password-error", "Password must be at least 8 characters long.");
+                hasErrors = true;
+            }
+
+            if (hasErrors) {
+                return;
+            }
+            // Simulate login process
+            setTimeout(() => {
+                console.log('Login successful!', { email, password });
+                // In a real app, you would redirect the user to another page here.
+                loginError.textContent = '';
+            }, 1000);
+        });
+
+        registerForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            clearErrors();
+
+            const fullName = document.getElementById('full-name').value.trim();
+            const username = document.getElementById('username').value.trim();
+            const email = document.getElementById('register-email').value.trim();
+            const password = document.getElementById('register-password').value.trim();
+            const confirmPassword = document.getElementById('confirm-password').value.trim();
+
+            let hasErrors = false;
+
+            if (!validateFullName(fullName)) {
+                formErrorResponse("full-name-error", "Full name must be at least 2 characters.");
+                hasErrors = true;
+            }
+            if (!validateUsername(username)) {
+                formErrorResponse("username-error", "Username must be at least 3 characters.");
+                hasErrors = true;
+            }
+            if (!validateEmail(email)) {
+                formErrorResponse("register-email-error", "Please enter a valid email address.");
+                hasErrors = true;
+            }
+            if (!validatePassword(password)) {
+                formErrorResponse("register-password-error", "Password must be at least 8 characters long.");
+                hasErrors = true;
+            }
+            if (password !== confirmPassword) {
+                formErrorResponse("confirm-password-error", "Passwords don't match");
+                hasErrors = true;
+            }
+            if (hasErrors) {
+                return;
+            }
+
+            // Simulate registration process
+            setTimeout(() => {
+                console.log('Registration successful!', { fullName, username, email, password, confirmPassword });
+                // Switch to login form after successful registration
+                registerForm.classList.add('hidden');
+                loginForm.classList.remove('hidden');
+                cardTitle.textContent = 'Login';
+                cardDescription.textContent = 'Welcome back! Please enter your credentials to log in.';
+            }, 1000);
+        });
+
+        function validateEmail(email) {
+            const re = /^[^@\s@]+@[^@\s@]+\.[^@\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePassword(password) {
+            return password.length >= 8;
+        }
+
+        function validateFullName(fullName) {
+            return fullName.length >= 2;
+        }
+
+        function validateUsername(username) {
+            return username.length >= 3;
+        }
+
+        function formErrorResponse(inputID, response) {
+            const error = document.getElementById(inputID);
+            error.textContent = response;
+        }
+
+        function clearErrors() {
+            const errorMessages = document.querySelectorAll('.text-red-400');
+            errorMessages.forEach(error => {
+                error.textContent = '';
+            });
+            loginError.textContent = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet"; href="main page.css">
+    <title>Mnjaro store</title>
+</head>
+
+<script>
+  function searchProducts() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(input) ? 'block' : 'none';
+    });
+}
+</script>
+<body>
+    <!--NAVBAR(THE HEADER)-->
+
+    <header>
+      <div class="navbar" id="nav1">
+          <a href="../../index.html" class="logo">Mnjaro</a>
+          <div class="navitems">
+              <div class="down">
+                  <a href="#" class="downmain">computer</a>
+                  <div class="downmenu">
+                      <ul>
+                          <li><a href="#">INTEL</a></li>
+                          <li><a href="#">AMD</a></li>
+                          <li><a href="../../tony_project/tony.html">GPUS</a></li>
+                      </ul>
+                  </div>
+              </div>
+              <a href="../../ZAID_MOHAMMED/11test_project/index.html">Laptop</a>
+              <a href="main page.html">accessories</a>
+          </div>
+          <div class="user">
+              <a href="../../ahmed_yasser/indLOGIN.html">Sign in</a>
+              <a href="../../mohamed_SAID/cart.html">My cart</a>
+          </div>
+      </div>
+  </header>
+
+  <input type="text" id="searchInput" placeholder="Search products.." onkeyup="searchProducts()">
+
+
+
+
+<h1>Accessories</h1>
+  <div class="product-grid">
+
+    <div class="product-card">
+      <a href="beyerdynamic MMX 300 (2ng Gen).html">
+        <img src="beyerdynamic MMX 300 (2nd Gen).jpg" alt="Beyerdynamic MMX 300">
+        <h2>Beyerdynamic MMX 300</h2>
+        <p>$299</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="logitech g pro x wirless.html">
+        <img src="logitech g pro x wirless.jpg" alt="Logitech G Pro X Wireless">
+        <h2>Logitech G Pro X Wireless</h2>
+        <p>$139.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="Razer BlackShark V2 Pro (2023 Edition).html">
+        <img src="Razer BlackShark V2 Pro (2023 Edition).jpg" alt="Razer BlackShark V2 Pro">
+        <h2>Razer BlackShark V2 Pro</h2>
+        <p>$139.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="HyperX Cloud Orbit S.html">
+        <img src="HyperX Cloud Orbit S.jpg" alt="HyperX Cloud Orbit S">
+        <h2>HyperX Cloud Orbit S</h2>
+        <p>$329.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Sennheiser GSP 670.html">
+        <img src="Sennheiser GSP 670.jpg" alt="Sennheiser GSP 670">
+        <h2>Sennheiser GSP 670</h2>
+        <p>$77.55</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Crosair K100 RGB Optical-Mechanical Gaming Keyboard.html">
+        <img src="Crosair K100 RGB Optical-Mechanical Gaming Keyboard.jpg" alt="Corsair K100 RGB Optical">
+        <h2>Corsair K100 RGB Optical</h2>
+        <p>$244.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Razer Huntsman V2 Analog.html">
+        <img src="Razer Huntsman V2 Analog.jpg" alt="Razer Huntsman V2 Analog">
+        <h2>Razer Huntsman V2 Analog</h2>
+        <p>$249.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Logitech G915 TKL LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard.html">
+        <img src="Logitech G915 TKL LIGHTSPEED Wireless RGB Mechanical Gaming Keyboard.jpg" alt="Logitech G915 TKL">
+        <h2>Logitech G915 TKL Lightspeed</h2>
+        <p>$229.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="SteelSeries Apex Pro.html">
+        <img src="SteelSeries Apex Pro.jpg" alt="SteelSeries Apex Pro">
+        <h2>SteelSeries Apex Pro</h2>
+        <p>$239.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="ASUS ROG Claymore II.html">
+        <img src="ASUS ROG Claymore II.jpg" alt="ASUS ROG Claymore II">
+        <h2>ASUS ROG Claymore II</h2>
+        <p>$269.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Ducky One 3 Mini.html">
+        <img src="Ducky One 3 Mini.jpg" alt="Ducky One 3 Mini">
+        <h2>Ducky One 3 Mini</h2>
+        <p>$104</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Leopold FC980M.html">
+        <img src="Leopold FC980M.jpg" alt="Leopold FC980M">
+        <h2>Leopold FC980M</h2>
+        <p>$199.5</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Mountain Everest Max.html">
+        <img src="Mountain Everest Max.jpg" alt="Mountain Everest Max">
+        <h2>Mountain Everest Max</h2>
+        <p>$299.5</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Logitech G PRO X SUPERLIGHT Wireless Gaming Mouse.html">
+        <img src="Logitech G PRO X SUPERLIGHT Wireless Gaming Mouse.png" alt="Logitech G Pro X Superlight">
+        <h2>Logitech G Pro X Superlight</h2>
+        <p>$119.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="SteelSeries Aerox 5 Wireless.html">
+        <img src="SteelSeries Aerox 5 Wireless.jpg" alt="SteelSeries Aerox 5 Wireless">
+        <h2>SteelSeries Aerox 5 Wireless</h2>
+        <p>$119.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="ASUS ROG Spatha X.html">
+        <img src="ASUS ROG Spatha X.jpg" alt="ASUS ROG Spatha X">
+        <h2>ASUS ROG Spatha X</h2>
+        <p>$149.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="finalmouse starlight twelve wirelss.html">
+        <img src="Finalmouse Starlight twelve Wireless.jpg" alt="Finalmouse Starlight twelve Wireless">
+        <h2>Finalmouse Starlight 12 Wireless</h2>
+        <p>$189.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Cooler Master MM720.html">
+        <img src="Cooler Master MM720.jpg" alt="Cooler Master MM720">
+        <h2>Cooler Master MM720</h2>
+        <p>$48.90</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Roccat Kone XP.html">
+        <img src="Roccat Kone XP.jpg" alt="Roccat Kone XP">
+        <h2>Roccat Kone XP</h2>
+        <p>$77.55</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="Crosair virtuoso rbg wireless xt.html">
+        <img src="crosair virtuoso rbg wireless xt.jpg" alt="Corsair Virtuoso RGB Wireless XT">
+        <h2>Corsair Virtuoso RGB Wireless XT</h2>
+        <p>$198.99</p>
+      </a>
+    </div>
+    
+    <div class="product-card">
+      <a href="steelseries arctis nova pro wirless.html">
+        <img src="steelseries arctis nova pro wirless.png" alt="SteelSeries Arctis Nova Pro Wireless">
+        <h2>SteelSeries Arctis Nova Pro Wireless</h2>
+        <p>$349.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="audeze maxwell.html">
+        <img src="audeze maxwell.jpg" alt="audeze maxwell">
+        <h2>Audeze Maxwell</h2>
+        <p>$149.99</p>
+      </a>
+    </div>
+
+    <div class="product-card">
+      <a href="Mad Catz R.A.T. 8+.html">
+        <img src="Mad Catz R.A.T. 8+.jpg" alt="Mad Catz R.A.T. 8+">
+        <h2>Mad Catz R.A.T. 8+</h2>
+        <p>$299.99</p>
+      </a>
+    </div>
+      </div>
+  </div>
+
+  <br><br><br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-------------------->
+    <!-------footer--------->
+    <footer>
+        <div class="foot">
+          <h1>MnJaro</h1>
+          <ul class="footer-links">
+            <li><a href="../../cntcs.html" target="_blank">Contact Us</a></li>
+            <li><a href="../../pri.html" target="_blank">Privacy Policy</a></li>
+            <li><a href="../../copy.html" target="_blank">Copyright</a></li>
+            <li><a href="../../ahmed_yasser/accountint.html" target="_blank">MyAccount</a></li>
+          </ul>
+          <div class="me">
+            <h3>Who made this website?</h3>
+            <p>Name: Adham Samer Wali</p>
+            <p>ID: 20241218</p>
+          </div>
+          <h2>
+            Mnjaro Store © 2019 All Rights Reserved. Designed by Mnjaro Store
+          </h2>
+        </div>
+    </footer>
